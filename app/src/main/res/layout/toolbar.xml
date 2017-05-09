@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/BAMBOO_COLOR"
+    android:minHeight="?attr/actionBarSize"
+    android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+    <ImageView
+        android:id="@+id/split"
+        android:layout_width="@dimen/public_space_value_1"
+        android:layout_height="@dimen/public_space_value_25"
+        android:visibility="gone"
+        android:background="@color/T3"
+        />
+
+    <TextView
+        android:id="@+id/titleLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="left"
+        android:paddingLeft="@dimen/public_space_value_10"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/action_bar_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/action_bar_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/titleRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="@dimen/public_space_value_16"
+        android:layout_gravity="right"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/action_bar_title"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/rightImg"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        />
+
+</android.support.v7.widget.Toolbar>

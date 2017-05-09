@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_root"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/dialog_bg_r7"
+    android:alpha="0.4"
+    android:layout_width="120dp"
+    android:layout_height="120dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/loading"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/describeTv"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="@dimen/public_space_value_11"
+        android:textSize="14sp"
+        android:text="数据获取中..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

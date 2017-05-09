@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="O1">#FF5C00</color>
+    <color name="OH">#EB5500</color>
+    <color name="O3">#F7B895</color>
+    <color name="R1">#E93600</color>
+    <color name="Rb">#FAE5DF</color>
+    <color name="Y1">#FFA500</color>
+    <color name="B1">#1D67BE</color>
+    <color name="B2">#368BD7</color>
+    <color name="B3">#83BDF2</color>
+    <color name="BG1">#FFFFFF</color>
+    <color name="BG2">#FAFAFA</color>
+    <color name="BG3">#F0F0F0</color>
+    <color name="S1">#F0F0F0</color>
+    <color name="S2">#E6E6E6</color>
+    <color name="S3">#CCCCCC</color>
+    <color name="S4">#999999</color>
+    <color name="T1">#FFFFFF</color>
+    <color name="T2">#CCCCCC</color>
+    <color name="T3">#999999</color>
+    <color name="T4">#666666</color>
+    <color name="T5">#333333</color>
+    <color name="BAMBOO_COLOR">#0CAB30</color>
+    <color name="BAMBOO_APP_BG">#F7F7F7</color>
+
+
+    <color name="blue_color">#7f91b3</color>
+</resources>

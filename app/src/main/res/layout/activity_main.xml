@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+
+    <FrameLayout
+        android:background="@android:color/white"
+        android:id="@+id/contentView"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/public_space_value_1"
+        android:background="@color/S3" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/public_space_value_55"
+        android:layout_below="@+id/line"
+        android:background="@color/BG2"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <RadioButton
+            android:id="@+id/imgOne"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:checked="false"
+            android:drawablePadding="@dimen/public_space_value_2"
+            android:gravity="center"
+            android:paddingTop="@dimen/public_space_value_6"
+            android:text="理财"
+            android:textColor="#888888"
+            android:textSize="@dimen/public_textsize_value_10" />
+
+        <RadioButton
+            android:id="@+id/imgTwo"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:checked="false"
+            android:drawablePadding="@dimen/public_space_value_2"
+            android:gravity="center"
+            android:paddingTop="@dimen/public_space_value_6"
+            android:text="活动"
+            android:textColor="#888888"
+            android:textSize="@dimen/public_textsize_value_10" />
+
+
+        <RadioButton
+            android:id="@+id/imgThree"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:checked="false"
+            android:drawablePadding="@dimen/public_space_value_2"
+            android:gravity="center"
+            android:paddingTop="@dimen/public_space_value_6"
+            android:text="我"
+            android:textColor="#888888"
+            android:textSize="@dimen/public_textsize_value_10" />
+
+
+    </RadioGroup>
+</LinearLayout>

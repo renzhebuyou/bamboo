@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/BAMBOO_APP_BG"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/public_space_value_17"
+        android:gravity="center_vertical"
+        android:paddingRight="@dimen/public_space_value_15"
+        android:paddingTop="@dimen/public_space_value_15"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/public_space_value_15"
+        android:paddingLeft="@dimen/public_space_value_15">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/public_space_value_25">
+            <TextView
+                android:layout_width="wrap_content"
+                android:minWidth="60dp"
+                android:layout_height="wrap_content"
+                android:text="手机号"
+                android:textColor="#333333"
+                android:textSize="@dimen/public_textsize_value_14"/>
+
+            <com.cashbus.android.bamboo.views.ExtendClearEditText
+                android:textSize="@dimen/public_textsize_value_14"
+                android:layout_width="@dimen/public_space_value_0"
+                android:lines="1"
+                android:inputType="phone"
+                android:digits="0123456789"
+                android:imeOptions="actionNext"
+                android:layout_height="wrap_content"
+                android:hint="请输入手机号"
+                android:textColor="#333333"
+                android:textColorHint="#c5c5c5"
+                android:background="@null"
+                android:layout_weight="1"
+                android:id="@+id/edtPhone" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/phoneError"
+            android:orientation="horizontal"
+            android:paddingLeft="60dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/public_space_value_4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <ImageView
+                android:layout_width="@dimen/public_space_value_12"
+                android:layout_height="@dimen/public_space_value_12"
+                android:src="@mipmap/ic_cell_error_n"/>
+            <TextView
+                android:layout_marginLeft="@dimen/public_space_value_2"
+                android:textSize="@dimen/public_textsize_value_13"
+                android:layout_width="match_parent"
+                android:textColor="#ff240e"
+                android:layout_height="wrap_content"
+                android:text="手机号格式不正确"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:background="#C7C7C7"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/public_space_value_1"
+        android:layout_marginLeft="@dimen/public_space_value_15"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:paddingRight="@dimen/public_space_value_15"
+        android:paddingTop="@dimen/public_space_value_13"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/public_space_value_13"
+        android:paddingLeft="@dimen/public_space_value_15">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/public_space_value_25">
+            <TextView
+                android:layout_width="wrap_content"
+                android:minWidth="60dp"
+                android:layout_height="wrap_content"
+                android:text="验证码"
+                android:textColor="#333333"
+                android:textSize="@dimen/public_textsize_value_14"/>
+
+            <com.cashbus.android.bamboo.views.ExtendClearEditText
+                android:textSize="@dimen/public_textsize_value_14"
+                android:layout_width="@dimen/public_space_value_0"
+                android:lines="1"
+                android:inputType="phone"
+                android:digits="0123456789"
+                android:imeOptions="actionNext"
+                android:layout_height="wrap_content"
+                android:hint="请输入验证码"
+                android:textColor="#333333"
+                android:textColorHint="#c5c5c5"
+                android:background="@null"
+                android:layout_weight="1"
+                android:id="@+id/edtSms" />
+            <Button
+                android:id="@+id/btnGetSms"
+                android:gravity="center"
+                android:text="获取验证码"
+                android:background="@drawable/btn_bamboo_r5"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/smsError"
+            android:orientation="horizontal"
+            android:paddingLeft="60dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/public_space_value_4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <ImageView
+                android:layout_width="@dimen/public_space_value_12"
+                android:layout_height="@dimen/public_space_value_12"
+                android:src="@mipmap/ic_cell_error_n"/>
+            <TextView
+                android:layout_marginLeft="@dimen/public_space_value_2"
+                android:textSize="@dimen/public_textsize_value_13"
+                android:layout_width="match_parent"
+                android:textColor="#ff240e"
+                android:layout_height="wrap_content"
+                android:text="验证码格式不正确"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/public_space_value_10"
+        android:gravity="center_vertical"
+        android:paddingRight="@dimen/public_space_value_15"
+        android:paddingTop="@dimen/public_space_value_15"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/public_space_value_15"
+        android:paddingLeft="@dimen/public_space_value_15">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/public_space_value_25">
+            <TextView
+                android:layout_width="wrap_content"
+                android:minWidth="60dp"
+                android:layout_height="wrap_content"
+                android:text="新密码"
+                android:textColor="#333333"
+                android:textSize="@dimen/public_textsize_value_14"/>
+
+            <com.cashbus.android.bamboo.views.ExtendClearEditText
+                android:textSize="@dimen/public_textsize_value_14"
+                android:layout_width="@dimen/public_space_value_0"
+                android:lines="1"
+                android:inputType="textPassword"
+                android:imeOptions="actionNext"
+                android:layout_height="wrap_content"
+                android:hint="请设置新密码"
+                android:textColor="#333333"
+                android:textColorHint="#c5c5c5"
+                android:background="@null"
+                android:layout_weight="1"
+                android:id="@+id/edtNewPwd" />
+            <CheckBox
+                android:id="@+id/cbEye"
+                android:checked="true"
+                android:button="@drawable/cb_eye"
+                android:layout_width="@dimen/public_space_value_22"
+                android:layout_height="@dimen/public_space_value_15"
+                android:background="@null"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/newPwdError"
+            android:orientation="horizontal"
+            android:paddingLeft="60dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/public_space_value_4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <ImageView
+                android:layout_width="@dimen/public_space_value_12"
+                android:layout_height="@dimen/public_space_value_12"
+                android:src="@mipmap/ic_cell_error_n"/>
+            <TextView
+                android:layout_marginLeft="@dimen/public_space_value_2"
+                android:textSize="@dimen/public_textsize_value_13"
+                android:layout_width="match_parent"
+                android:textColor="#ff240e"
+                android:layout_height="wrap_content"
+                android:text="密码号格式不正确"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_marginTop="@dimen/public_space_value_20"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="注册"
+        android:gravity="center"
+        android:background="@drawable/btn_bamboo_r5"
+        android:textSize="@dimen/public_textsize_value_18"
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="@dimen/public_space_value_15"
+        android:layout_marginRight="@dimen/public_space_value_15"/>
+
+    <TextView
+        android:id="@+id/tvLogin"
+        android:layout_marginTop="@dimen/public_space_value_16"
+        android:layout_marginRight="@dimen/public_space_value_15"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="已有账号直接登录"
+        android:textSize="@dimen/public_textsize_value_14"
+        android:textColor="#9b9b9b"/>
+
+
+</LinearLayout>

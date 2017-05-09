@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/public_space_value_16"
+        android:layout_marginRight="@dimen/public_space_value_16"
+        android:layout_marginTop="@dimen/public_space_value_16"
+        android:layout_marginBottom="@dimen/public_space_value_16"
+        android:outlineProvider="background"
+        android:elevation="@dimen/public_space_value_6"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/top_text_multi_bg">
+
+            <RelativeLayout
+                android:id="@+id/title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:minHeight="@dimen/public_space_value_60"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:paddingRight="@dimen/public_space_value_10"
+                    android:paddingLeft="@dimen/public_space_value_10"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="更新"
+                    android:textColor="#fd850a"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f9f9f9"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="@dimen/public_space_value_10"
+                    android:paddingRight="@dimen/public_space_value_10"
+                    android:paddingBottom="@dimen/public_space_value_20"
+                    android:textColor="#5a5a5a"
+                    android:textSize="@dimen/public_textsize_value_15" />
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/mutiLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginBottom="0dip"
+                    android:layout_marginTop="0dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/multi_cancel"
+                    android:text="取消"
+                    android:textColor="@color/blue_color"
+                    android:textSize="@dimen/public_textsize_value_16" />
+
+
+                <Button
+                    android:id="@+id/btn_ok"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginBottom="0dip"
+                    android:layout_marginTop="0dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/multi_ok"
+                    android:text="确 定"
+                    android:textColor="#989898"
+                    android:textSize="@dimen/public_textsize_value_16" />
+            </LinearLayout>
+
+            <View
+
+                android:layout_width="0.1dp"
+                android:layout_height="@dimen/public_space_value_21"
+                android:layout_centerInParent="true"
+                android:background="#b0b0b0" />
+        </RelativeLayout>
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btnOk"
+            android:text="确 定"
+            android:textColor="#989898"
+            android:textSize="@dimen/public_textsize_value_16"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="@drawable/multi_btn_bg"/>
+    </LinearLayout>
+</LinearLayout>

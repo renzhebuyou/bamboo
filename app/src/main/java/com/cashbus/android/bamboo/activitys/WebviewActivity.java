@@ -104,15 +104,10 @@ public class WebviewActivity extends BasicActivity implements HostJsInterface{
     public void setToolbarStatus(String jsonString) {
         try {
             final JSONObject jsonObject = new JSONObject(jsonString);
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    if (toolbar != null &&  !isFinishing()){
-                        TextView tvTitle = (TextView) toolbar.findViewById(R.id.title);
-                        tvTitle.setText(jsonObject.optString("title"));
-                    }
-                }
-            });
+            if (toolbar != null &&  !isFinishing()){
+                TextView tvTitle = (TextView) toolbar.findViewById(R.id.title);
+                tvTitle.setText(jsonObject.optString("title"));
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

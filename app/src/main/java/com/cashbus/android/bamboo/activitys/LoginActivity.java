@@ -264,28 +264,20 @@ public class LoginActivity extends BasicActivity implements View.OnClickListener
         Map<String,String> map = new HashMap<>();
         map.put("username",edtPhone.getText().toString().trim());
         map.put("password",edtPwd.getText().toString().trim());
-        Call<BasicResponse> call = httpTask.appLogin(map);
-        call.enqueue(new HttpCookieCallBack<BasicResponse>(mContext){
+        Call<Map<String,String>> call = httpTask.appLogin(map);
+        call.enqueue(new HttpCookieCallBack<Map<String,String>>(mContext){
             @Override
-            public void onResponse(Call<BasicResponse> call, Response<BasicResponse> response) {
+            public void onResponse(Call<Map<String,String>> call, Response<Map<String,String>> response) {
                 super.onResponse(call, response);
                 DialogUtils.dismissLoadDialog();
-                BasicResponse b = response.body();
+                Map<String,String> b = response.body();
                 if (b != null){
-                    if ("-1".equals(b.getCode())){
-                        if (!TextUtils.isEmpty(b.getMsg())) {
-                            DialogUtils.showTitleMultiDialog(mContext, "", b.getMsg(), "", "确定", 0, 0, false, null, null);
-                        }else {
-                            DialogUtils.showTitleMultiDialog(mContext, "", "数据异常", "", "确定", 0, 0, false, null, null);
-                        }
-                    }else if ("0".equals(b.getCode())){
 
-                    }
                 }
             }
 
             @Override
-            public void onFailure(Call<BasicResponse> call, Throwable t) {
+            public void onFailure(Call<Map<String,String>> call, Throwable t) {
                 super.onFailure(call, t);
                 DialogUtils.dismissLoadDialog();
             }

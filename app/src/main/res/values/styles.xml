@@ -50,4 +50,13 @@
         <item name="android:windowEnterAnimation">@anim/umeng_socialize_slide_in_from_bottom</item>
         <item name="android:windowExitAnimation">@anim/umeng_socialize_slide_out_from_bottom</item>
     </style>
+
+    <style name="dot_style">
+        <item name="android:layout_width">5dp</item>
+        <item name="android:layout_height">5dp</item>
+        <item name="android:background">@drawable/dot_normal</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+
 </resources>

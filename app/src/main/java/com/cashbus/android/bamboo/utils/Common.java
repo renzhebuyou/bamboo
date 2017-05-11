@@ -47,6 +47,9 @@ public class Common {
     public static String JS_ALIAS = "zzApp";
 
 
+    public static String LINK_NEWER = "/#!/product/newer";//新手福利
+    public static String LINK_WEEKLY = "/#!/product/weekly";//周周智投
+
     public static void webSetting(final WebView webView){
         webView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -141,8 +144,9 @@ public class Common {
         cookieManager.setAcceptCookie(true);
 //        cookieManager.removeSessionCookie();//移除
         cookieManager.setCookie(Common.DOMAIN, "username="+SettingUtils.get(context, Common.HTTPREQUEST_USERPHONE, ""));
-        cookieManager.setCookie(Common.DOMAIN, "jsessionid="+ HttpUtils.JSESSIONID);//cookies是在HttpClient中获得的cookie
+        cookieManager.setCookie(Common.DOMAIN, HttpUtils.JSESSIONID);//cookies是在HttpClient中获得的cookie
         cookieManager.setCookie(Common.DOMAIN, "serverid="+HttpUtils.SERVERID);
+        cookieManager.setCookie(Common.DOMAIN, "loginToken="+ SettingUtils.get(context,Common.HTTPREQUEST_TOKEN,""));
         CookieSyncManager.getInstance().sync();
 
     }

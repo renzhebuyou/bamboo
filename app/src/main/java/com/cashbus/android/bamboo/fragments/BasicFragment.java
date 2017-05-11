@@ -1,5 +1,6 @@
 package com.cashbus.android.bamboo.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -27,22 +28,21 @@ public class BasicFragment extends Fragment implements HostJsInterface {
         super.onActivityCreated(savedInstanceState);
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
     @JavascriptInterface
     @Override
     public void setToolbarStatus(String jsonString) {
         try {
             final JSONObject jsonObject = new JSONObject(jsonString);
-            getActivity().runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    if (toolbar != null && getActivity() != null && !getActivity().isFinishing()){
-                        TextView tvTitle = (TextView) toolbar.findViewById(R.id.title);
-                        tvTitle.setText(jsonObject.optString("title"));
-                        ((MainActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(jsonObject.optBoolean("isNeedBack"));
-                    }
-
-                }
-            });
+            if (toolbar != null && getActivity() != null && !getActivity().isFinishing()){
+                TextView tvTitle = (TextView) toolbar.findViewById(R.id.title);
+                tvTitle.setText(jsonObject.optString("title"));
+                ((MainActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(jsonObject.optBoolean("isNeedBack"));
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

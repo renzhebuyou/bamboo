@@ -31,5 +31,5 @@ public interface HttpTask {
     Call<BasicResponse>  appRegister(@Body Map<String,String> map);
 
     @POST("/rest/root/user/appLogin")
-    Call<BasicResponse> appLogin(@Body Map<String,String> map);
+    Call<Map<String,String>> appLogin(@Body Map<String,String> map);
 }

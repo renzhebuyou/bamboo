@@ -44,34 +44,9 @@ public class MainActivity extends BasicActivity implements View.OnClickListener 
     }
 
     private void initListener() {
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
-                    case R.id.imgOne:
-                        checkIndex = checkedId;
-                        tvTitle.setText("理财");
-                        transaction = fragmentManager.beginTransaction();
-                        Fragment financialFragment = new FinancialFragment();
-                        transaction.replace(R.id.contentView, financialFragment);
-                        transaction.commit();
-                        break;
-                    case R.id.imgTwo:
-                        checkIndex = checkedId;
-                        tvTitle.setText("活动");
-                        transaction = fragmentManager.beginTransaction();
-                        Fragment activitysFragment = new ActivitysFragment();
-                        transaction.replace(R.id.contentView, activitysFragment);
-                        transaction.commit();
-                        break;
-                    case R.id.imgThree:
-                        radioGroup.check(checkIndex);
-                        startActivity(new Intent(mContext,MyActivity.class));
-                        break;
-                }
-            }
-        });
-
+        imgOne.setOnClickListener(this);
+        imgTwo.setOnClickListener(this);
+        imgThree.setOnClickListener(this);
     }
 
     private void initViews() {
@@ -81,19 +56,17 @@ public class MainActivity extends BasicActivity implements View.OnClickListener 
         mToolbar.setTitle("");
         setSupportActionBar(mToolbar);
         tvTitle = (TextView) findViewById(R.id.title);
-        tvTitle.setText("理财");
+        tvTitle.setText("竹子理财");
 
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         imgOne = (RadioButton) findViewById(R.id.imgOne);
         imgTwo = (RadioButton) findViewById(R.id.imgTwo);
         imgThree = (RadioButton) findViewById(R.id.imgThree);
 
-
-        fragmentManager = getSupportFragmentManager();
-        imgOne.setChecked(true);
         checkIndex = R.id.imgOne;
+        imgOne.setChecked(true);
+        fragmentManager = getSupportFragmentManager();
         transaction = fragmentManager.beginTransaction();
-
         Fragment mainFragment = new FinancialFragment();
         transaction.replace(R.id.contentView, mainFragment);
         transaction.commit();
@@ -102,7 +75,38 @@ public class MainActivity extends BasicActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-
+                case R.id.imgOne:
+                    if (checkIndex == R.id.imgOne){
+                        return;
+                    }
+                    imgOne.setChecked(true);
+                    checkIndex = R.id.imgOne;
+                    tvTitle.setText("竹子理财");
+                    transaction = fragmentManager.beginTransaction();
+                    Fragment financialFragment = new FinancialFragment();
+                    transaction.replace(R.id.contentView, financialFragment);
+                    transaction.commit();
+                    break;
+                case R.id.imgTwo:
+                    if (checkIndex == R.id.imgTwo){
+                        return;
+                    }
+                    imgTwo.setChecked(true);
+                    checkIndex = R.id.imgTwo;
+                    tvTitle.setText("活动");
+                    transaction = fragmentManager.beginTransaction();
+                    Fragment activitysFragment = new ActivitysFragment();
+                    transaction.replace(R.id.contentView, activitysFragment);
+                    transaction.commit();
+                    break;
+                case R.id.imgThree:
+                    if (checkIndex == R.id.imgTwo){
+                        imgTwo.setChecked(true);
+                    }else {
+                        imgOne.setChecked(true);
+                    }
+                    startActivity(new Intent(mContext,MyActivity.class));
+                    break;
         }
     }
 

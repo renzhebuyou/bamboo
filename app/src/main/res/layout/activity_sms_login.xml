@@ -189,29 +189,29 @@
 
 
 
-    <RelativeLayout
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/test"
-        android:layout_marginTop="@dimen/public_space_value_10"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="@dimen/public_space_value_15"
-        android:layout_marginRight="@dimen/public_space_value_15"
-        android:padding="@dimen/public_space_value_3"
-        android:background="@drawable/btn_bamboo_r25">
+    <!--<RelativeLayout-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:id="@+id/test"-->
+        <!--android:layout_marginTop="@dimen/public_space_value_10"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_marginLeft="@dimen/public_space_value_15"-->
+        <!--android:layout_marginRight="@dimen/public_space_value_15"-->
+        <!--android:padding="@dimen/public_space_value_3"-->
+        <!--android:background="@drawable/btn_bamboo_r25">-->
 
 
-        <TextView
-            android:id="@+id/tvLogin"
-            android:textSize="@dimen/public_textsize_value_18"
-            android:textColor="#85D597"
-            android:text="登录"
-            android:gravity="center"
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="@dimen/public_space_value_40"
-            android:minWidth="@dimen/public_space_value_40"/>
+        <!--<TextView-->
+            <!--android:id="@+id/tvLogin"-->
+            <!--android:textSize="@dimen/public_textsize_value_18"-->
+            <!--android:textColor="#85D597"-->
+            <!--android:text="登录"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:minHeight="@dimen/public_space_value_40"-->
+            <!--android:minWidth="@dimen/public_space_value_40"/>-->
 
-    </RelativeLayout>
+    <!--</RelativeLayout>-->
 </LinearLayout>

@@ -34,6 +34,10 @@
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
+            android:name=".activitys.NewerCourseActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
             android:name=".activitys.ForgetPwdActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 

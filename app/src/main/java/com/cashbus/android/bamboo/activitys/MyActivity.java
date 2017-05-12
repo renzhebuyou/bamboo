@@ -105,7 +105,11 @@ public class MyActivity extends BasicActivity implements HostJsInterface {
                 public void run() {
                     if (toolbar != null && !isFinishing()){
                         TextView tvTitle = (TextView) toolbar.findViewById(R.id.title);
-                        tvTitle.setText(jsonObject.optString("title"));
+                        if (!TextUtils.isEmpty(jsonObject.optString("title"))) {
+                            tvTitle.setText(jsonObject.optString("title"));
+                        }else {
+                            tvTitle.setText("竹子理财");
+                        }
                     }
 
                 }

@@ -5,8 +5,24 @@ package com.cashbus.android.bamboo.modle;
  */
 public class ImgInfo {
 
-    String id,title,pic,link;
+    String id,title,pic,link,imageUrl,url;
     int resId;
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public int getResId() {
         return resId;

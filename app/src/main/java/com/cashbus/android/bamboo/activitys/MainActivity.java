@@ -6,8 +6,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -29,6 +31,8 @@ public class MainActivity extends BasicActivity implements View.OnClickListener 
     private TextView tvTitle;
     BackInterface backInterface;
     private int checkIndex = 0;
+    public ImageView rightImg;
+    public String  rightImgUrl;
 
     public void setBackInterface(BackInterface backInterface) {
         this.backInterface = backInterface;
@@ -58,6 +62,10 @@ public class MainActivity extends BasicActivity implements View.OnClickListener 
         tvTitle = (TextView) findViewById(R.id.title);
         tvTitle.setText("竹子理财");
 
+        rightImg = (ImageView) findViewById(R.id.rightImg);
+        rightImg.setVisibility(View.VISIBLE);
+        rightImg.setImageResource(R.mipmap.ic_product_news_n);
+
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         imgOne = (RadioButton) findViewById(R.id.imgOne);
         imgTwo = (RadioButton) findViewById(R.id.imgTwo);
@@ -70,6 +78,19 @@ public class MainActivity extends BasicActivity implements View.OnClickListener 
         Fragment mainFragment = new FinancialFragment();
         transaction.replace(R.id.contentView, mainFragment);
         transaction.commit();
+
+        rightImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!TextUtils.isEmpty(rightImgUrl)) {
+                    Intent intent = new Intent(mContext, WebviewActivity.class);
+                    intent.putExtra(Common.WEB_LINK, rightImgUrl);
+                    intent.putExtra(Common.WEB_TITLE, "消息中心");
+                    startActivity(intent);
+                }
+            }
+        });
+
     }
 
     @Override
@@ -107,6 +128,7 @@ public class MainActivity extends BasicActivity implements View.OnClickListener 
                     }
                     startActivity(new Intent(mContext,MyActivity.class));
                     break;
+
         }
     }
 

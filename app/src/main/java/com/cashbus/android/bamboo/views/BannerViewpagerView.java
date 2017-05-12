@@ -23,6 +23,7 @@ import com.cashbus.android.bamboo.utils.Common;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -105,7 +106,7 @@ public class BannerViewpagerView extends LinearLayout implements View.OnClickLis
     }
     private int positionViewPager= 0;
     private int size;
-    private Handler mHandler=new Handler(){
+    public Handler mHandler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -142,7 +143,7 @@ public class BannerViewpagerView extends LinearLayout implements View.OnClickLis
 
     };
 
-    List<ImgInfo> resIds=new ArrayList<ImgInfo>();
+    List<Map<String,String>> resIds = new ArrayList<>();
 
     @Override
     public void onClick(View v) {
@@ -157,9 +158,9 @@ public class BannerViewpagerView extends LinearLayout implements View.OnClickLis
         if(size>=2){
             mHandler.sendMessage(Message.obtain(mHandler, MSG_PAGE_CHANGED, position, 0));
         }
-        if(size>0){
-            selected(position%size);
-        }
+//        if(size>0){
+//            selected(position%size);
+//        }
     }
 
     @Override
@@ -180,6 +181,10 @@ public class BannerViewpagerView extends LinearLayout implements View.OnClickLis
         }
     }
 
+    public void startLoop(){
+        mHandler.sendEmptyMessage(MSG_BREAK_SILENT);
+    }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         mHandler.removeCallbacks(null);
@@ -197,7 +202,7 @@ public class BannerViewpagerView extends LinearLayout implements View.OnClickLis
         }
     }
 
-    public void setData(List<ImgInfo> resIds) {
+    public void setData(List<Map<String,String>> resIds) {
         this.resIds = resIds;
         size = resIds.size();
         //添加第六项
@@ -213,7 +218,7 @@ public class BannerViewpagerView extends LinearLayout implements View.OnClickLis
         mViewPager.setAdapter(mAdapter);
         addDynamicView();
         selected(0);
-
+        mTabLy.setVisibility(GONE);
     }
 
 

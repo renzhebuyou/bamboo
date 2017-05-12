@@ -38,11 +38,16 @@ public class BasicFragment extends Fragment implements HostJsInterface {
     public void setToolbarStatus(String jsonString) {
         try {
             final JSONObject jsonObject = new JSONObject(jsonString);
-            if (toolbar != null && getActivity() != null && !getActivity().isFinishing()){
-                TextView tvTitle = (TextView) toolbar.findViewById(R.id.title);
-                tvTitle.setText(jsonObject.optString("title"));
-                ((MainActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(jsonObject.optBoolean("isNeedBack"));
-            }
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (toolbar != null && getActivity() != null && !getActivity().isFinishing()){
+                        TextView tvTitle = (TextView) toolbar.findViewById(R.id.title);
+                        tvTitle.setText(jsonObject.optString("title"));
+                        ((MainActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(jsonObject.optBoolean("isNeedBack"));
+                    }
+                }
+            });
         } catch (JSONException e) {
             e.printStackTrace();
         }

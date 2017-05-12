@@ -49,7 +49,7 @@ public class Common {
 
     public static String LINK_NEWER = "/#!/product/newer";//新手福利
     public static String LINK_WEEKLY = "/#!/product/weekly";//周周智投
-
+    public static String LINK_MESSAGE = "/#!/my/message";//消息中心
     public static void webSetting(final WebView webView){
         webView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

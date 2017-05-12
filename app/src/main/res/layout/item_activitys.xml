@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cashbus.android.bamboo.views.TouchLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_marginTop="@dimen/public_space_value_10"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/public_space_value_20"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/leftTv"
+            android:textSize="@dimen/public_textsize_value_18"
+            android:textStyle="bold"
+            android:textColor="#151515"
+            android:layout_centerVertical="true"
+            android:text="新手福利"
+            android:layout_marginLeft="@dimen/public_space_value_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/rightTv"
+            android:layout_centerVertical="true"
+            android:textColor="#151515"
+            android:textSize="@dimen/public_textsize_value_13"
+            android:text="688元！688元现金红包"
+            android:layout_marginRight="@dimen/public_space_value_15"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_marginTop="@dimen/public_space_value_20"
+        android:layout_marginBottom="@dimen/public_space_value_10"
+        android:layout_marginRight="@dimen/public_space_value_10"
+        android:layout_marginLeft="@dimen/public_space_value_10"
+        android:src="@mipmap/img_banner_n"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</com.cashbus.android.bamboo.views.TouchLinearLayout>

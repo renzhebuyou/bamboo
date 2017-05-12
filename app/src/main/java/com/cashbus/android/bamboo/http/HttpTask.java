@@ -3,6 +3,7 @@ package com.cashbus.android.bamboo.http;
 import com.cashbus.android.bamboo.modle.BasicResponse;
 
 import java.io.InputStream;
+import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
@@ -32,4 +33,10 @@ public interface HttpTask {
 
     @POST("/rest/root/user/appLogin")
     Call<Map<String,String>> appLogin(@Body Map<String,String> map);
+
+    @POST("/rest/root/homePage")
+    Call<Map<String,Object>> getHomePage();
+
+    @POST("/rest/root/activity/list")
+    Call<Map<String, List<Map<String,String>>>> getActivityList();
 }

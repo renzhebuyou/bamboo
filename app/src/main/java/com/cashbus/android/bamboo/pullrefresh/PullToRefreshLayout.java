@@ -27,6 +27,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.cashbus.android.bamboo.R;
+import com.cashbus.android.bamboo.views.BannerViewpagerView;
 
 import java.lang.reflect.Field;
 import java.util.Timer;
@@ -268,10 +269,16 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
 	public boolean dispatchTouchEvent(MotionEvent ev)
 	{
 		if (scrollView != null){
-			if (scrollView.getScrollY() > 0){
+			if (scrollView.getScrollY() > 0 ){
 				return super.dispatchTouchEvent(ev);
 			}
+
 		}
+			if (bannerViewpagerView != null){
+				if (bannerViewpagerView.SCROLL_STATE == 1){
+					return super.dispatchTouchEvent(ev);
+				}
+			}
 
 		if (recyclerView != null){
 			if (getScollYDistance(recyclerView) > 0){
@@ -419,6 +426,8 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
 		stateImageView = headView.findViewById(R.id.state_iv);
 	}
 
+	BannerViewpagerView bannerViewpagerView = null;
+
 	@Override
 	protected void onLayout(boolean changed, int l, int t, int r, int b)
 	{
@@ -427,6 +436,18 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
 			headView = getChildAt(0);
 			contentView = getChildAt(1);
 			contentView.setOnTouchListener(this);
+
+			if (contentView instanceof ScrollView){
+				ViewGroup viewGroup = ((ViewGroup)((ScrollView) contentView).getChildAt(0));
+				int count = viewGroup.getChildCount();
+				for (int i = 0; i < count; i ++ ){
+					if (viewGroup.getChildAt(i) instanceof BannerViewpagerView){
+						bannerViewpagerView = (BannerViewpagerView) viewGroup.getChildAt(i);
+						break;
+					}
+				}
+			}
+
 			isLayout = true;
 			initView();
 			refreshDist = ((ViewGroup) headView).getChildAt(0).getMeasuredHeight();

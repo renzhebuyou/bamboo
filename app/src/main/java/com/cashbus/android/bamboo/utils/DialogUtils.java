@@ -118,8 +118,8 @@ public class DialogUtils {
 //    }
 
     public static synchronized void showTitleMultiDialog(final Context con, String title, String content, String confirmBtnPrompt,
-                                           String cancelBtnPrompt, int confirmColor, int cancelColor, final boolean isCancelable, final HandleDialogListener handleConfirm,
-                                           final HandleDialogListener handleCancel) {
+                                                         String cancelBtnPrompt, int confirmColor, int cancelColor, final boolean isCancelable, final HandleDialogListener handleConfirm,
+                                                         final HandleDialogListener handleCancel) {
         final Dialog mDialog = new Dialog(con, R.style.BambooDialog);
         mDialog.setContentView(R.layout.common_multi_dialog);
         mDialog.setCanceledOnTouchOutside(false);
@@ -347,12 +347,10 @@ public class DialogUtils {
 
     private static Dialog mDialog;
     public static void showLoadingDialog(Context con, String msg) {
-        if (mDialog == null) {
-            mDialog = new Dialog(con, R.style.BambooDialog);
-            mDialog.setContentView(R.layout.dialog_loading);
-            mDialog.setCanceledOnTouchOutside(false);
-            mDialog.setCancelable(false);
-        }
+        mDialog = new Dialog(con, R.style.BambooDialog);
+        mDialog.setContentView(R.layout.dialog_loading);
+        mDialog.setCanceledOnTouchOutside(false);
+        mDialog.setCancelable(false);
 
         ImageView img = (ImageView) mDialog.findViewById(R.id.img);
         TextView describeTv = (TextView) mDialog.findViewById(R.id.describeTv);

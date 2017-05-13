@@ -19,7 +19,7 @@ public class CircleProgressView extends View {
 
     private int mMaxProgress = 100;
 
-    private int mProgress = 80;
+    private int mProgress = 0;
 
     private final int mCircleLineStrokeWidth = 4;
 

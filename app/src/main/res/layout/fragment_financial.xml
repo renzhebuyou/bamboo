@@ -137,7 +137,7 @@
                                 android:id="@+id/yearProfitTvNew"
                                 android:textSize="36sp"
                                 android:textColor="#f76c1b"
-                                android:text="15"
+                                android:text="0"
                                 android:textStyle="bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -185,7 +185,7 @@
                                 android:id="@+id/dayTvNew"
                                 android:textSize="24sp"
                                 android:textColor="#5c5c5c"
-                                android:text="30"
+                                android:text="0"
                                 android:textStyle="bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
@@ -333,7 +333,7 @@
                                 android:id="@+id/yearProfitTvZZZT"
                                 android:textSize="36sp"
                                 android:textColor="#f76c1b"
-                                android:text="15"
+                                android:text="0"
                                 android:textStyle="bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -400,7 +400,7 @@
                                 android:id="@+id/dayTvZzzt"
                                 android:textSize="24sp"
                                 android:textColor="#5c5c5c"
-                                android:text="30"
+                                android:text="0"
                                 android:textStyle="bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
@@ -469,10 +469,13 @@
             <TextView
                 android:layout_marginBottom="@dimen/public_space_value_12"
                 android:layout_marginTop="@dimen/public_space_value_5"
+                android:textSize="@dimen/public_textsize_value_10"
+                android:textColor="#B2B2B2"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="－更多产品 敬请期待－"/>
+
 
         </LinearLayout>
     </com.cashbus.android.bamboo.views.ObservableScrollView>

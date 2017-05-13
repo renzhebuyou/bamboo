@@ -90,7 +90,7 @@ public class FinancialFragment extends BasicFragment implements View.OnClickList
         dayTvZzzt = (TextView) rootView.findViewById(R.id.dayTvZzzt);
 
         newUserGradient = (LinearGradientLayout) rootView.findViewById(R.id.newUserGradient);
-        newUserGradient.setLinearGradientColor(new int[] { 0XFFFE8E03,0XFFF86F19 });
+        newUserGradient.setLinearGradientColor(new int[] { 0XFFF86F19,0XFFFE8E03 });
 
         zzGradient = (LinearGradientLayout) rootView.findViewById(R.id.zzGradient);
         zzGradient.setLinearGradientColor(new int[] { 0XFF429321,0XFFB4ED50 });
@@ -122,12 +122,25 @@ public class FinancialFragment extends BasicFragment implements View.OnClickList
                     bannerViewpagerView.startLoop();
                     final List<Map<String,Object>> detail = (List<Map<String, Object>>) map.get("detail");
                     ((TextView)rootView.findViewById(R.id.newerTvRight)).setText((String)detail.get(0).get("detail"));
-                    yearProfitTvNew.setText(""+(detail.get(0).get("minRate")));
+                    String minRate = ""+(detail.get(0).get("minRate"));
+                    if (minRate.contains(".")){
+                        minRate = minRate.substring(0,minRate.indexOf("."));
+                    }
+                    yearProfitTvNew.setText(minRate);
 
                     ((TextView)rootView.findViewById(R.id.zzztTvRight)).setText((String)detail.get(1).get("detail"));
                     String maxRate = ""+(detail.get(1).get("maxRate"));
-                    String minRate = ""+(detail.get(1).get("minRate"));
+                    minRate = ""+(detail.get(1).get("minRate"));
+
+                        if (minRate.contains(".")){
+                            minRate = minRate.substring(0,minRate.indexOf("."));
+                        }
                     if (!TextUtils.isEmpty(maxRate)) {
+
+                        if (maxRate.contains(".")){
+                            maxRate = maxRate.substring(0,maxRate.indexOf("."));
+                        }
+
                         yearProfitTvZZZT.setText(minRate);
                         ((TextView)rootView.findViewById(R.id.yearProfitTvZZZT1)).setText(maxRate);
                     }else {

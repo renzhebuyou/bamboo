@@ -163,15 +163,19 @@ public class BannerViewpagerView extends LinearLayout implements View.OnClickLis
 //        }
     }
 
+    public int SCROLL_STATE = 0;
+
     @Override
     public void onPageScrollStateChanged(int state) {
         switch (state) {
             case ViewPager.SCROLL_STATE_DRAGGING:
+                SCROLL_STATE = 1;
                 if(size>=2){
                     mHandler.sendEmptyMessage(MSG_KEEP_SILENT);
                 }
                 break;
             case ViewPager.SCROLL_STATE_IDLE:
+                SCROLL_STATE = 0;
                 if(size>=2){
                     mHandler.sendEmptyMessageDelayed(MSG_UPDATE_IMAGE, MSG_DELAY);
                 }
@@ -188,6 +192,7 @@ public class BannerViewpagerView extends LinearLayout implements View.OnClickLis
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         mHandler.removeCallbacks(null);
+
         return super.onTouchEvent(event);
     }
 
